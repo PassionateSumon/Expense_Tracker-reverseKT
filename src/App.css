@@ -1,0 +1,59 @@
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10%;
+    background-color: #00246B;
+}
+
+.form label {
+    font-size: large;
+    margin-right: 10px;
+    color: #CADCFC
+}
+
+.form input {
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.err {
+    color: red;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    height: 80vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    /* margin-top: 73.8vh; */
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
