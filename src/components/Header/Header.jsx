@@ -8,7 +8,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="bg-slate-500 flex justify-between items-center p-4">
+    <nav className="bg-[#D1EDE1] flex justify-between items-center p-4">
       <div className=" text-black text-xl pl-2 font-medium cursor-pointer">
         Expense Tracker
       </div>
@@ -20,8 +20,8 @@ const Header = () => {
                 to="/"
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
-                    isActive ? "text-orange-400" : "text-black"
-                  } lg:hover:bg-transparent lg:border-0 hover:text-teal-300 lg:p-0`
+                    isActive ? "text-[#FE736D]" : "text-black"
+                  } lg:hover:bg-transparent lg:border-0 hover:text-[#1D7C53] lg:p-0`
                 }
               >
                 Home
@@ -32,8 +32,8 @@ const Header = () => {
                 to="/signup"
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
-                    isActive ? "text-orange-400" : "text-black"
-                  } lg:hover:bg-transparent lg:border-0 hover:text-teal-300 lg:p-0`
+                    isActive ? "text-[#FE736D]" : "text-black"
+                  } lg:hover:bg-transparent lg:border-0 hover:text-[#1D7C53] lg:p-0`
                 }
               >
                 Signup/Login
@@ -48,8 +48,8 @@ const Header = () => {
                 to="/"
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
-                    isActive ? "text-orange-400" : "text-black"
-                  } lg:hover:bg-transparent lg:border-0 hover:text-teal-300 lg:p-0`
+                    isActive ? "text-[#FE736D]" : "text-black"
+                  } lg:hover:bg-transparent lg:border-0 hover:text-[#1D7C53] lg:p-0`
                 }
               >
                 Home
@@ -60,8 +60,8 @@ const Header = () => {
                 to="/budget"
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
-                    isActive ? "text-orange-400" : "text-black"
-                  } lg:hover:bg-transparent lg:border-0 hover:text-teal-300 lg:p-0`
+                    isActive ? "text-[#FE736D]" : "text-black"
+                  } lg:hover:bg-transparent lg:border-0 hover:text-[#1D7C53] lg:p-0`
                 }
               >
                 Budget
@@ -72,15 +72,12 @@ const Header = () => {
                 to="/profile"
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
-                    isActive ? "text-orange-400" : "text-black"
-                  } lg:hover:bg-transparent lg:border-0 hover:text-teal-300 lg:p-0`
+                    isActive ? "text-[#FE736D]" : "text-black"
+                  } lg:hover:bg-transparent lg:border-0 hover:text-[#1D7C53] lg:p-0`
                 }
               >
                 Profile
               </NavLink>
-            </li>
-            <li>
-              <button onClick={() => dispatch(signOut())}>Logout</button>
             </li>
           </ul>
         )}

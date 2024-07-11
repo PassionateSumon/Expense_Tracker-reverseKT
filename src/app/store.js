@@ -3,6 +3,7 @@ import crudReducer from "../features/expenseSlice";
 import authReducer from "../features/authSlice";
 import budgetReducer from "../features/budgetSlice";
 import { loadState, saveState } from "../features/budgetLocalStorage";
+import toastReducer from "../features/toastSlice";
 
 const persistedState = loadState();
 // console.log(typeof(persistedState));
@@ -12,6 +13,7 @@ const store = configureStore({
     crud: crudReducer,
     auth: authReducer,
     bud: budgetReducer,
+    tst: toastReducer,
   },
   preloadedState: persistedState,
 });

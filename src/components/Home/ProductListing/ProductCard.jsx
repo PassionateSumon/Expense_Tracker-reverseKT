@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { addingPurchaseCost } from "../../../features/budgetSlice";
 import { useDispatch } from "react-redux";
+import { Toaster } from "react-hot-toast";
+import { setToast } from "../../../features/toastSlice";
 
 const ProductCard = ({
   productName,
@@ -15,11 +17,18 @@ const ProductCard = ({
 
   const handleSave = (id) => {
     const cost = val[id] || 0;
-    dispatch(addingPurchaseCost({ id, cost }));
-    setVal((prev) => ({
-      ...prev,
-      [id]: 0,
-    }));
+    if (cost < 0) {
+      dispatch(
+        setToast({ text: "-ve values are not accepted", type: "error" })
+      );
+    } else {
+      dispatch(addingPurchaseCost({ id, cost }));
+      dispatch(setToast({ text: "Cost added successfully", type: "success" }));
+      setVal((prev) => ({
+        ...prev,
+        [id]: 0,
+      }));
+    }
   };
 
   const handleChange = (id, cost) => {
@@ -33,8 +42,9 @@ const ProductCard = ({
     <div
       className={`max-w-sm bg-white shadow-md rounded-lg overflow-hidden ${colorChanging}`}
     >
+      <Toaster />
       <div className="p-6">
-        <h1 className="text-xl font-bold mb-2">{productName}</h1>
+        <h1 className="text-xl font-bold mb-2 capitalize">{productName}</h1>
         <p className="text-gray-700 text-base">
           Purchase Cost: {purchaseCost || 0}
         </p>
@@ -44,9 +54,9 @@ const ProductCard = ({
         <div className="mt-4">
           <input
             type="number"
-            className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="border-2 border-solid border-black  rounded-xl w-full py-3 px-3 text-gray-700 leading-tight"
             placeholder="Enter amount"
-            value={val[id]}
+            value={val[id] || ""}
             onChange={(e) => handleChange(id, e.target.value)}
           />
         </div>

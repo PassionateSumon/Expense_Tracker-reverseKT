@@ -6,6 +6,10 @@ import ProductCard from "../Home/ProductListing/ProductCard";
 const Home = () => {
   const isSignIn = useSelector((state) => state.auth.isSignIn);
   const allBudgetList = useSelector((state) => state.bud.budget);
+  // console.log(allBudgetList);
+  // const allBudgetList = [{id:1, text:'', cost: '200'}];
+
+
   // const dispatch = useDispatch();
   // const [val, setVal] = useState({});
 
@@ -34,12 +38,12 @@ const Home = () => {
         </div>
       ) : (
         <div className="h-full w-full">
-          <div className="text-center text-2xl font-semibold text-slate-300 bg-slate-700 rounded-md p-2 cursor-pointer">
+          <div className="text-center text-2xl font-semibold text-black bg-[#7BC5AE] rounded-md p-2 cursor-pointer">
             Products List
           </div>
 
           <div className="flex flex-wrap gap-4 p-4">
-            {allBudgetList.map((item) => {
+            {allBudgetList?.map((item) => {
               const diff = item.cost - item.purchasedCost;
 
               let colorChanging = "border-2 border-black border-solid";
