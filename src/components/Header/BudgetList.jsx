@@ -52,7 +52,7 @@ const BudgetList = () => {
         My Set Budgets
       </h1>
       {budget.length === 0 ? (
-        <div className="text-center text-2xl text-white font-semibold border-2 border-slate-400 w-[50%] m-auto bg-sky-800 rounded-xl p-4">
+        <div className="text-center text-2xl text-white font-semibold border-2 w-[50%] m-auto bg-[#1D7C53] rounded-xl p-4">
           Empty
         </div>
       ) : (
